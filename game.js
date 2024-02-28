@@ -1,3 +1,5 @@
+// Logic for X O Game
+
 let playerTxt = document.getElementById("playerTxt")
 let restBtn = document.getElementById("restBtn")
 let boxes = Array.from(document.getElementsByClassName('box'))
@@ -13,6 +15,9 @@ const startGame = () => {
     boxes.forEach(box => box.addEventListener('click', boxClicked))
 }
 
+// IT'S YOUR TURN!
+// FUNCTION WHEN IT'S THE USER TURN, FIRST TIME X SECOND TIME O
+
 function boxClicked(e) {
     const id = e.target.id
 
@@ -24,5 +29,20 @@ function boxClicked(e) {
     }
     // console.log(e.target)
 }
+
+// THE RESTART BUTTON
+
+restBtn.addEventListener('click', restart)
+
+function restart() {
+    spaces.fill(null)
+
+    boxes.forEach(box => {
+        box.innerText = ''
+    })
+
+    currentPlayer = X_Text
+}
+
 
 startGame()
