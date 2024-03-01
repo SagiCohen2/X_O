@@ -6,7 +6,7 @@ let boxes = Array.from(document.getElementsByClassName('box'))
 
 // console.log(boxes)
 
-let winningIndicator = getComputedStyle(document.body).getPropertyValue('--winning')
+let winningIndicator = getComputedStyle(document.body).getPropertyValue('--winning-blocks')
 
 const O_Text = "O"
 const X_Text = "X"
@@ -79,7 +79,7 @@ function restart() {
         box.style.backgroundColor = ''
     })
 
-    playerTxt = 'X_O Game :)'
+    playerTxt.innerHTML = 'X_O Game :)'
 
     currentPlayer = X_Text
 }
